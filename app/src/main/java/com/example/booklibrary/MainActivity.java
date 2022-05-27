@@ -16,10 +16,12 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.airbnb.lottie.LottieAnimationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
@@ -30,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private DatabaseHelper databaseHelper;
     ArrayList<String> book_id, book_title, book_author, book_pages;
     CustomAdapter customAdapter;
-    private ImageView emptyImageView;
+    private LottieAnimationView emptyFolder;
     private TextView noDataText;
 
     @Override
@@ -39,7 +41,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         recyclerView = findViewById(R.id.recyclerView);
         add_button = findViewById(R.id.addButton);
-        emptyImageView = findViewById(R.id.emptyImageView);
+//        emptyImageView = findViewById(R.id.emptyImageView);
+        emptyFolder=findViewById(R.id.emptyAnimation);
         noDataText = findViewById(R.id.noDataTextView);
         add_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,7 +75,8 @@ public class MainActivity extends AppCompatActivity {
         if (cursor.getCount() == 0) {
 //            Toast.makeText(this, "No Data", Toast.LENGTH_SHORT).show();
             databaseHelper.deleteAllData();
-            emptyImageView.setVisibility(View.VISIBLE);
+//            emptyImageView.setVisibility(View.VISIBLE);
+            emptyFolder.setVisibility(View.VISIBLE);
             noDataText.setVisibility(View.VISIBLE);
         } else {
             while (cursor.moveToNext()) {
@@ -81,7 +85,8 @@ public class MainActivity extends AppCompatActivity {
                 book_author.add(cursor.getString(2));
                 book_pages.add(cursor.getString(3));
             }
-            emptyImageView.setVisibility(View.GONE);
+//            emptyImageView.setVisibility(View.GONE);
+            emptyFolder.setVisibility(View.GONE);
             noDataText.setVisibility(View.GONE);
         }
     }
