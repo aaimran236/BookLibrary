@@ -14,9 +14,9 @@
         android:layout_marginBottom="32dp"
         android:text="Welcome to Book Store App"
         android:gravity="center"
-        android:textColor="#008EFF"
+        android:textColor="#00899A"
         android:textSize="25sp"
-        android:textStyle="italic"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/lottie"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

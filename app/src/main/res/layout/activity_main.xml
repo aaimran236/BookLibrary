@@ -31,6 +31,7 @@
         tools:ignore="SpeakableTextPresentCheck" />
 
     <com.airbnb.lottie.LottieAnimationView
+        app:lottie_colorFilter="?android:attr/textColorPrimary"
         android:id="@+id/emptyAnimation"
         android:layout_width="match_parent"
         android:layout_height="250dp"
@@ -51,7 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:alpha="0.3"
-        android:textColor="@color/black"
+        android:textColor="?android:attr/textColorPrimary"
         android:text="No Data !"
         android:textSize="25sp"
         android:visibility="gone"
