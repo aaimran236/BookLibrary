@@ -12,6 +12,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -37,15 +39,17 @@ public class MainActivity extends AppCompatActivity {
     CustomAdapter customAdapter;
     private LottieAnimationView emptyFolder;
     private TextView noDataText;
+    private  boolean state=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toast.makeText(this, "called", Toast.LENGTH_SHORT).show();
         recyclerView = findViewById(R.id.recyclerView);
         add_button = findViewById(R.id.addButton);
-//        emptyImageView = findViewById(R.id.emptyImageView);
-        emptyFolder=findViewById(R.id.emptyAnimation);
+//      emptyImageView = findViewById(R.id.emptyImageView);
+        emptyFolder = findViewById(R.id.emptyAnimation);
         noDataText = findViewById(R.id.noDataTextView);
         add_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,14 +67,7 @@ public class MainActivity extends AppCompatActivity {
         customAdapter = new CustomAdapter(MainActivity.this, this, book_id, book_title, book_author, book_pages);
         recyclerView.setAdapter(customAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this));
-    }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 1) {
-            recreate();
-        }
     }
 
     void storeDataInArrays() {
@@ -106,13 +103,13 @@ public class MainActivity extends AppCompatActivity {
         if (item.getItemId() == R.id.delete_all) {
             confirmDialog();
         }
-        if(item.getItemId()==R.id.lightTheme){
+        if (item.getItemId() == R.id.lightTheme) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }
-        if (item.getItemId()==R.id.darkTheme){
+        if (item.getItemId() == R.id.darkTheme) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
         }
-        if (item.getItemId()==R.id.systemDefaultTheme){
+        if (item.getItemId() == R.id.systemDefaultTheme) {
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
         }
         return super.onOptionsItemSelected(item);
