@@ -3,6 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/apps/personalprojects/booklibrary/app/src/main/res/drawable-v24/button_clicked.xml" value="0.188" />
+        <entry key="..\:/apps/personalprojects/booklibrary/app/src/main/res/drawable-v24/button_default.xml" value="0.188" />
+        <entry key="..\:/apps/personalprojects/booklibrary/app/src/main/res/drawable-v24/button_disabled.xml" value="0.188" />
+        <entry key="..\:/apps/personalprojects/booklibrary/app/src/main/res/drawable-v24/custom_button.xml" value="0.188" />
         <entry key="..\:/apps/personalprojects/booklibrary/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.188" />
         <entry key="..\:/apps/personalprojects/booklibrary/app/src/main/res/layout/activity_add.xml" value="0.25416666666666665" />
         <entry key="..\:/apps/personalprojects/booklibrary/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />

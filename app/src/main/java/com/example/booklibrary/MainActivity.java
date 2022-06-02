@@ -39,13 +39,12 @@ public class MainActivity extends AppCompatActivity {
     CustomAdapter customAdapter;
     private LottieAnimationView emptyFolder;
     private TextView noDataText;
-    private  boolean state=false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toast.makeText(this, "called", Toast.LENGTH_SHORT).show();
         recyclerView = findViewById(R.id.recyclerView);
         add_button = findViewById(R.id.addButton);
 //      emptyImageView = findViewById(R.id.emptyImageView);
