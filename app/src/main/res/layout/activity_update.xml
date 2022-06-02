@@ -24,7 +24,7 @@
         android:id="@+id/author_input2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:ems="10"
         android:hint="Book Author"
         android:inputType="textPersonName"
@@ -37,7 +37,7 @@
         android:id="@+id/pages_input2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="32dp"
         android:ems="10"
         android:hint="number of pages"
         android:inputType="number"
@@ -48,26 +48,28 @@
 
     <Button
         android:id="@+id/updateButtonId"
-        android:layout_width="match_parent"
+        android:background="@drawable/custom_button"
+        android:layout_width="120dp"
         android:layout_height="70dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="100dp"
         android:text="Update"
-        android:textColor="#005E88"
         android:textAllCaps="false"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.066"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pages_input2" />
 
     <Button
         android:id="@+id/deleteButtonId"
-        android:layout_width="match_parent"
+        android:background="@drawable/custom_button"
+        android:layout_width="120dp"
         android:layout_height="70dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="100dp"
         android:text="Delete"
-        android:textColor="#FF0000"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/updateButtonId" />
+        app:layout_constraintStart_toEndOf="@+id/updateButtonId"
+        app:layout_constraintTop_toBottomOf="@+id/pages_input2" />
 </androidx.constraintlayout.widget.ConstraintLayout>
