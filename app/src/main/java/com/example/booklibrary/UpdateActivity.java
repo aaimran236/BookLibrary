@@ -20,6 +20,10 @@ public class UpdateActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update);
+        ActionBar ab=getSupportActionBar();
+        if (ab!=null){
+            ab.setTitle(title);
+        }
 
         title_input = findViewById(R.id.title_input2);
         author_input = findViewById(R.id.author_input2);
@@ -29,10 +33,6 @@ public class UpdateActivity extends AppCompatActivity {
 
         getAndSetIntentData();
 
-        ActionBar ab=getSupportActionBar();
-        if (ab!=null){
-            ab.setTitle(title);
-        }
 
         updateButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -81,7 +81,7 @@ public class UpdateActivity extends AppCompatActivity {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 databaseHelper.deleteOneRow(id);
-                finish();
+               finish();
             }
         });
         builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
